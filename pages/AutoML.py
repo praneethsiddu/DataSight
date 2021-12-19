@@ -37,12 +37,12 @@ def app():
     """This application helps in running machine learning models without having to write explicit code 
     by the user. It runs some basic models and let's the user select the X and y variables. 
     """
-    path=os.getcwd()
+    #path=os.getcwd()
     # Load the data 
-    if 'main_data.csv' not in os.listdir(path+'/data'):
+    if 'main_data.csv' not in os.listdir('data'):
         st.markdown("Please upload data through `Upload Data` page!")
     else:
-        df = pd.read_csv(path+'/data/main_data.csv')
+        df = pd.read_csv('data/main_data.csv')
 
         # Create the model parameters dictionary 
         #params = {}
