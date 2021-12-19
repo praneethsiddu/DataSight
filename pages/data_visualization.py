@@ -45,7 +45,7 @@ def app():
             select_ = st.radio("Select Type for Categorial Analysis",('None','count plot','box plot','violin plot','bar chart','Histogram'))
             if select_ == "count plot":
                 
-                s = st.selectbox('select the column',df1.columns)
+                s = st.selectbox('select the column',df1.columns,key=1)
                 ax = sns.countplot(df1[s])
                 ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
                 st.write(sns.countplot(df1[s]))
@@ -66,8 +66,8 @@ def app():
                     st.session_state.insights.append(str1)
             if select_ == 'box plot':
                 #t.write(df1.dtypes)
-                x = st.selectbox('Select X Column',df1.columns)
-                y = st.selectbox('Select Y Column',df1.columns)
+                x = st.selectbox('Select X Column',df1.columns,key=2)
+                y = st.selectbox('Select Y Column',df1.columns,key=3)
                 st.write(x,y)
                 plt.figure(figsize=(10, 7))
                 #sns.set_theme(style="whitegrid")
@@ -80,8 +80,8 @@ def app():
                     st.session_state.insights.append(str1)
             if select_ == 'violin plot':
                 #t.write(df1.dtypes)
-                x = st.selectbox('Select X Column',df1.columns)
-                y = st.selectbox('Select Y Column',df1.columns)
+                x = st.selectbox('Select X Column',df1.columns,key=4)
+                y = st.selectbox('Select Y Column',df1.columns,key=5)
                 st.write(x,y)
                 plt.figure(figsize=(10, 7))
                 #sns.set_theme(style="whitegrid")
@@ -95,7 +95,7 @@ def app():
                 
             if select_ == "Histogram":
                 #st.write(df1.dtypes)
-                x = st.selectbox('Select Numerical Variables',df1.columns)
+                x = st.selectbox('Select Numerical Variables',df1.columns,,key=6)
                 plt.figure(figsize=(12, 8))
                 #sns.set_theme(style="whitegrid")
                 ax3 =sns.distplot(df1[x])
@@ -113,8 +113,8 @@ def app():
             select_ = st.radio("Select Type for Regression Analysis",('None','area chart','line chart','lmplot','scatter plot'))
             if select_ == 'scatter plot':
                 #t.write(df1.dtypes)
-                x = st.selectbox('Select X Column',df1.columns)
-                y = st.selectbox('Select Y Column',df1.columns)
+                x = st.selectbox('Select X Column',df1.columns,,key=7)
+                y = st.selectbox('Select Y Column',df1.columns,,key=8)
                 st.write(x,y)
                 plt.figure(figsize=(10, 7))
                 #sns.set_theme(style="whitegrid")
@@ -127,8 +127,8 @@ def app():
                     st.session_state.insights.append(str1)
             if select_ == 'lmplot':
                 #t.write(df1.dtypes)
-                x = st.selectbox('Select X Column',df1.columns)
-                y = st.selectbox('Select Y Column',df1.columns)
+                x = st.selectbox('Select X Column',df1.columns,key=9)
+                y = st.selectbox('Select Y Column',df1.columns,key=10)
                 cols = pd.read_csv('data/column_type_desc.csv')
                 
                 Categorical,Numerical,Object = utils.getColumnTypes(cols)
@@ -146,7 +146,7 @@ def app():
                 
             if select_=="area chart":
                 #st.write(df1.dtypes)
-                s = st.multiselect("Select Columns To Show",df1.columns)
+                s = st.multiselect("Select Columns To Show",df1.columns,key=11)
                 st.area_chart(df1[s])
                 str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=5)
                 if str1 != "None":
@@ -154,7 +154,7 @@ def app():
                 
             if select_ == "line chart":
                 
-                s = st.multiselect("Select Columns To Show",df1.columns)
+                s = st.multiselect("Select Columns To Show",df1.columns,key=12)
                 st.line_chart(df1[s])
                 str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=6)
                 if str1 != "None":
@@ -197,7 +197,7 @@ def app():
                   if str1 != "None":
                       st.session_state.insights.append(str1)
             if select_=="Dist Plot":
-                s = st.multiselect("Select Columns To Show",df1.columns)
+                s = st.multiselect("Select Columns To Show",df1.columns,key=13)
                 plt.figure(figsize=(12, 8))
                 #sns.set_theme(style="whitegrid")
                 ax3 =sns.distplot(df1[s])
@@ -210,8 +210,8 @@ def app():
                     st.session_state.insights.append(str1)
             if select_ == 'Joint Plot':
                 #t.write(df1.dtypes)
-                x = st.selectbox('Select X Column',df1.columns)
-                y = st.selectbox('Select Y Column',df1.columns)
+                x = st.selectbox('Select X Column',df1.columns,key=14)
+                y = st.selectbox('Select Y Column',df1.columns,key=15)
                 st.write(x,y)
                 kind = st.selectbox('Select Kind parameter to compare',["scatter","reg","resid","kde","hex"])
                 plt.figure(figsize=(10, 7))
