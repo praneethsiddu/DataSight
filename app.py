@@ -13,7 +13,11 @@ from PIL import  Image
 # Custom imports 
 from multipage import MultiPage
 from pages import data_upload,AandG,data_stats,data_visualization,AutoML,pandas_profile_app,welcome
-
+st.set_page_config(
+        page_title="DataSight",
+        page_icon="chart_with_upwards_trend",
+        layout="wide",
+    )
 
 # Create an instance of the app 
 app = MultiPage()
