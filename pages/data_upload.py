@@ -31,8 +31,8 @@ def app():
         except Exception as e:
             print(e)
             data = pd.read_excel(uploaded_file)
-        path=os.getcwd()
-        data.to_csv(path+'\data\main_data.csv', index = False)
+        #path=os.getcwd()
+        data.to_csv('data/main_data.csv', index = False)
     
     
     
@@ -92,7 +92,7 @@ def app():
         # Save the columns as a dataframe with categories
         # Here column_name is the name of the field and the type is whether it's numerical or categorical
         columns_df = pd.DataFrame(columns, columns = ['column_name', 'type'])
-        columns_df.to_csv(path+'\data\column_type_desc.csv', index = False)
+        columns_df.to_csv('data/column_type_desc.csv', index = False)
 
         # Display columns 
         with st.expander("Check Summary"):
