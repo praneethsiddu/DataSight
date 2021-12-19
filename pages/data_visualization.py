@@ -95,7 +95,7 @@ def app():
                 
             if select_ == "Histogram":
                 #st.write(df1.dtypes)
-                x = st.selectbox('Select Numerical Variables',df1.columns,,key=6)
+                x = st.selectbox('Select Numerical Variables',df1.columns,key=6)
                 plt.figure(figsize=(12, 8))
                 #sns.set_theme(style="whitegrid")
                 ax3 =sns.distplot(df1[x])
