@@ -8,7 +8,7 @@ Created on Sat Dec 18 18:45:52 2021
 import streamlit as st
 import base64
 import io
-import plotly_express as px
+#import plotly_express as px
 import pandas as pd 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
