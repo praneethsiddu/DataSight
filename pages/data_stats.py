@@ -13,13 +13,13 @@ import os
 from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
 def app():
-    path = os.getcwd()
-    st.write(path)
-    if 'main_data.csv' not in os.listdir(path+"\data"):
+    #path = os.getcwd()
+    #st.write(path)
+    if 'main_data.csv' not in os.listdir("data"):
         st.markdown("Please upload data through `Upload Data` page!")
     else:
         
-        df = pd.read_csv(path+'\data\main_data.csv')
+        df = pd.read_csv('data/main_data.csv')
         st.subheader("Exploratory Data Analysis")
         with st.expander("Check Data"):
             select_ = st.radio("HEAD OR TAIL",('All','HEAD','TAIL'))
@@ -52,7 +52,7 @@ def app():
             st.write(df[select_].count())
         with st.expander("Check Data Types"):
             
-            df1=pd.read_csv(path+'/data/column_type_desc.csv')
+            df1=pd.read_csv('data/column_type_desc.csv')
             st.dataframe(df1)
             
                 
