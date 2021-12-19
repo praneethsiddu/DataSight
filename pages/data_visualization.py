@@ -89,13 +89,13 @@ def app():
                 plt.xticks(rotation=90)
                 st.pyplot(plt)
                 st.markdown(imagedownload(plt,'violin.pdf'), unsafe_allow_html=True)
-                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=4)
+                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=42)
                 if str1 != "None":
                     st.session_state.insights.append(str1)
                 
             if select_ == "Histogram":
                 #st.write(df1.dtypes)
-                x = st.selectbox('Select Numerical Variables',df1.columns,key=6)
+                x = st.selectbox('Select Numerical Variables',df1.columns,key=66)
                 plt.figure(figsize=(12, 8))
                 #sns.set_theme(style="whitegrid")
                 ax3 =sns.distplot(df1[x])
@@ -122,7 +122,7 @@ def app():
                 plt.xticks(rotation=90)
                 st.pyplot(plt)
                 st.markdown(imagedownload(plt,'scatter_plot.pdf'), unsafe_allow_html=True)
-                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=4)
+                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=41)
                 if str1 != "None":
                     st.session_state.insights.append(str1)
             if select_ == 'lmplot':
@@ -140,7 +140,7 @@ def app():
                 plt.xticks(rotation=90)
                 st.pyplot(plt)
                 st.markdown(imagedownload(plt,'lmplot.pdf'), unsafe_allow_html=True)
-                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=4)
+                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=43)
                 if str1 != "None":
                     st.session_state.insights.append(str1)
                 
@@ -148,7 +148,7 @@ def app():
                 #st.write(df1.dtypes)
                 s = st.multiselect("Select Columns To Show",df1.columns,key=11)
                 st.area_chart(df1[s])
-                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=5)
+                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=51)
                 if str1 != "None":
                     st.session_state.insights.append(str1)
                 
@@ -204,7 +204,7 @@ def app():
                 plt.xticks(rotation=90)
                 st.pyplot(plt)
                 st.markdown(imagedownload(plt,'dist_plot.pdf'), unsafe_allow_html=True)
-                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=8)
+                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=81)
                 
                 if str1 != "None":
                     st.session_state.insights.append(str1)
@@ -220,7 +220,7 @@ def app():
                 plt.xticks(rotation=90)
                 st.pyplot(plt)
                 st.markdown(imagedownload(plt,'joint_plot.pdf'), unsafe_allow_html=True)
-                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=4)
+                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=47)
                 if str1 != "None":
                     st.session_state.insights.append(str1)
             if select_=="Rug Plot":
@@ -231,7 +231,7 @@ def app():
                 plt.xticks(rotation=90)
                 st.pyplot(plt)
                 st.markdown(imagedownload(plt,'rug_plot.pdf'), unsafe_allow_html=True)
-                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=8)
+                str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=87)
                 
                 if str1 != "None":
                     st.session_state.insights.append(str1)
