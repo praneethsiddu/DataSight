@@ -33,12 +33,12 @@ def imagedownload(plt, filename):
 def app():
     if 'insights' not in st.session_state:
         st.session_state.insights = []
-    path=os.getcwd()
-    if 'main_data.csv' not in os.listdir(path+'/data'):
+    #path=os.getcwd()
+    if 'main_data.csv' not in os.listdir('data'):
         st.markdown("Please upload data through `Upload Data` page!")
     else:
         # df_analysis = pd.read_csv('data/2015.csv')
-        df1 = pd.read_csv(path+'/data/main_data.csv')
+        df1 = pd.read_csv('data/main_data.csv')
         # df_visual = pd.DataFrame(df_analysis)
         df_visual = df1.copy()
         with st.expander("Categorial Data Plots"):
@@ -129,7 +129,7 @@ def app():
                 #t.write(df1.dtypes)
                 x = st.selectbox('Select X Column',df1.columns)
                 y = st.selectbox('Select Y Column',df1.columns)
-                cols = pd.read_csv(path+'\data\column_type_desc.csv')
+                cols = pd.read_csv('data/column_type_desc.csv')
                 
                 Categorical,Numerical,Object = utils.getColumnTypes(cols)
                 hue = st.selectbox('Select hue parameter',Categorical+Object)
