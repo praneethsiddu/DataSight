@@ -113,8 +113,8 @@ def app():
             select_ = st.radio("Select Type for Regression Analysis",('None','area chart','line chart','lmplot','scatter plot'))
             if select_ == 'scatter plot':
                 #t.write(df1.dtypes)
-                x = st.selectbox('Select X Column',df1.columns,,key=7)
-                y = st.selectbox('Select Y Column',df1.columns,,key=8)
+                x = st.selectbox('Select X Column',df1.columns,key=79)
+                y = st.selectbox('Select Y Column',df1.columns,key=89)
                 st.write(x,y)
                 plt.figure(figsize=(10, 7))
                 #sns.set_theme(style="whitegrid")
