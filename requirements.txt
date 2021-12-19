@@ -1,12 +1,12 @@
 numpy==1.19.1
-pandas==1.0.5
+pandas==1.1.3
 pandas-profiling==2.10.0
 streamlit-pandas-profiling==0.1.1
 scikit-learn==0.23.1
 matplotlib==3.5.1
 matplotlib-inline==0.1.3
-seaborn==0.11.2
-lazypredict==0.2.9
+seaborn==0.11.1
+lazypredict==0.2.7
 streamlit-aggrid==0.2.2.post4
 xgboost==1.1.1
 lightgbm==2.3.1
