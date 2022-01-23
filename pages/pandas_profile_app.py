@@ -18,16 +18,15 @@ def filedownload(path1):
 def app():
     st.write("Pandas Profiling Report")
     if st.button("click to generate"):
-        path=os.getcwd()
         # Load the data 
-        if 'main_data.csv' not in os.listdir(path+'/data'):
+        if 'main_data.csv' not in os.listdir('data'):
             st.markdown("Please upload data through `Upload Data` page!")
         else:
-            df = pd.read_csv(path+'/data/main_data.csv')
+            df = pd.read_csv('data/main_data.csv')
             with st.spinner('Cooking Report'):
                 report = ProfileReport(df)
-                path1=path+'/data/output.html'
-                report.to_file(output_file = path+'/data/output.html')
+                
+                report.to_file(output_file = 'data/output.html')
             st.success('Done!')
             st.write("You can view the report by downloading output.html file")
             #if st.button("Explore Columns"):
