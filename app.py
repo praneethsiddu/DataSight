@@ -12,7 +12,7 @@ from PIL import  Image
 
 # Custom imports 
 from multipage import MultiPage
-from pages import data_upload,AandG,data_stats,data_visualization,AutoML,pandas_profile_app,welcome
+from pages import data_upload,AandG,data_stats,data_visualization,AutoML,pandas_profile_app,welcome,custom_models
 st.set_page_config(
         page_title="DataSight",
         page_icon="chart_with_upwards_trend",
@@ -31,6 +31,7 @@ app.add_page("Aggregation and flitering", AandG.app)
 app.add_page("Data Visualization",data_visualization.app)
 app.add_page("pandas profile report", pandas_profile_app.app)
 app.add_page("AutoMl", AutoML.app)
+app.add_page("Custom Models", custom_models.app)
 
 
 # The main app
