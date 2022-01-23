@@ -15,6 +15,7 @@ import streamlit as st
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
 
 # Custom classes 
@@ -148,10 +149,10 @@ def app():
                 model_acc = []
 
             # Linear regression model 
-                lc_model = LogisticRegression()
+                lc_model =  RandomForestClassifier(n_estimators = 100)
                 lc_model.fit(X_train, y_train)
                 lc_acc = lc_model.score(X_test, y_test)
-                model_acc.append(['Logistic Regression', lc_acc])
+                model_acc.append(['RandomForestClassifier', lc_acc])
 
             # Decision Tree model 
                 dtc_model = DecisionTreeClassifier()
