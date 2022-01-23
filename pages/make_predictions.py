@@ -17,8 +17,8 @@ import numpy as np
 from .utils import isNumerical
 import os
 def app():
-    path=os.getcwd()
-    f = open(path+'\\data\\metadata\\model_params.json')
+    
+    f = open('data/metadata/model_params.json')
     data = json.load(f)
     st.write(data['y'])
     l=len(data['X'])
