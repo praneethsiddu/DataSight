@@ -12,13 +12,13 @@ A **big heartfelt Thanks** for your time in trying our tiny-simple-data visualiz
 Feel free to customize as needed. </p>
 <b>Advantages</b>
 <br>
-- **Simple** and quick for any**Exploratory Data Analysis**
+- Simple and quick for any Exploratory Data Analysis.
 <br>
-- Create interactive **Dashboard web app within minutes** from any csv and share the findings
+- Create interactive Dashboard web app within minutes from any csv and share the findings
 <br>
 - Download your results with just single click
 <br>
-- Highly **Customizable**
+- Highly Customizable
 <br>
 - No more static reports<br>
 """  
