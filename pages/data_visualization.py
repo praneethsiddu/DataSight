@@ -161,7 +161,7 @@ def app():
                     st.session_state.insights.append(str1)
                 
         with st.expander("Matrix Plots"):
-            select_ = st.radio("Select Type for Matrix Analysis",('None','Correlation Heatmap','clustermap'))
+            select_ = st.radio("Select Type for Matrix Analysis",('None','Correlation Heatmap','Yet to Impelement'))
             if select_=='Correlation Heatmap':
                 plt.figure(figsize=(12, 8))
                 #sns.set_theme(style="whitegrid")
@@ -172,7 +172,7 @@ def app():
                 str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=7)
                 if str1 != "None":
                     st.session_state.insights.append(str1)
-            if select_=='clustermap':
+            '''if select_=='clustermap':
                 plt.figure(figsize=(12, 8))
                 #sns.set_theme(style="whitegrid")
                 ax3 =sns.clustermap(df1)
@@ -181,7 +181,7 @@ def app():
                 st.markdown(imagedownload(plt,'clustermap.pdf'), unsafe_allow_html=True)
                 str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=7)
                 if str1 != "None":
-                    st.session_state.insights.append(str1)
+                    st.session_state.insights.append(str1)'''
                 
         with st.expander("Distrubtion plots"):
             select_ = st.radio("Select Type for Matrix Analysis",('None','Rug Plot','Dist Plot','Pair Plot','Joint Plot','yet to implement'))
