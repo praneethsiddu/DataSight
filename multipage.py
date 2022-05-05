@@ -32,7 +32,7 @@ class MultiPage:
 
     def run(self):
         # Drodown to select the page to run  
-        st.sidebar.image("logo3.png")
+        st.sidebar.image("logo3.jpg")
         #st.sidebar.title("DataSight")
         #st.sidebar.caption("A DataScience HandBook")
         page = st.sidebar.selectbox(
