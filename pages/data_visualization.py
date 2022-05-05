@@ -172,7 +172,7 @@ def app():
                 str1 = st.text_area("Text area for marking observations",placeholder="Notes",value="None",key=7)
                 if str1 != "None":
                     st.session_state.insights.append(str1)
-                if select_=='clustermap':
+            if select_=='clustermap':
                 plt.figure(figsize=(12, 8))
                 #sns.set_theme(style="whitegrid")
                 ax3 =sns.clustermap(df1)
