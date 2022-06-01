@@ -34,26 +34,6 @@ def app():
         #path=os.getcwd()
         data.to_csv('data/main_data.csv', index = False)
     
-    
-    
-    # uploaded_files = st.file_uploader("Upload your CSV file here.", type='csv', accept_multiple_files=False)
-    # # Check if file exists 
-    # if uploaded_files:
-    #     for file in uploaded_files:
-    #         file.seek(0)
-    #     uploaded_data_read = [pd.read_csv(file) for file in uploaded_files]
-    #     raw_data = pd.concat(uploaded_data_read)
-    
-    # uploaded_files = st.file_uploader("Upload CSV", type="csv", accept_multiple_files=False)
-    # print(uploaded_files, type(uploaded_files))
-    # if uploaded_files:
-    #     for file in uploaded_files:
-    #         file.seek(0)
-    #     uploaded_data_read = [pd.read_csv(file) for file in uploaded_files]
-    #     raw_data = pd.concat(uploaded_data_read)
-    
-    # read temp data 
-    # data = pd.read_csv('data/2015.csv')
 
 
     ''' Load the data and save the columns with categories as a dataframe. 
@@ -64,19 +44,7 @@ def app():
         st.dataframe(data)
         
 
-        #utils.getProfile(data)
-        #st.markdown("<a href='output.html' download target='_blank' > Download profiling report </a>",unsafe_allow_html=True)
-        #HtmlFile = open("data/output.html", 'r', encoding='utf-8')
-        #source_code = HtmlFile.read() 
-        #components.iframe("data/output.html")# Save the data to a new file 
-        ##data.to_csv('data/main_data.csv', index=False)
-        
-        #Generate a pandas profiling report
-        #if st.button("Generate an analysis report"):
-        #    utils.getProfile(data)
-            #Open HTML file
-
-        # 	pass
+    
 
         # Collect the categorical and numerical columns 
         
@@ -98,5 +66,4 @@ def app():
         with st.expander("Check Summary"):
             st.write(data.describe())
         
-       ## st.markdown("""The above are the automated column types detected by the application in the data. 
-        ##In case you wish to change the column types, head over to the **Column Change** section. """)
+      
